@@ -18,6 +18,8 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
+import { HeaderComponent } from './layout/header/header.component';
+import { FooterComponent } from './layout/footer/footer.component';
 
 const ngModules = [
   NzLayoutModule,
@@ -32,7 +34,9 @@ registerLocaleData(it);
     AppComponent,
     HomeComponent,
     MenuComponent,
-    ShoppingCartComponent
+    ShoppingCartComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
