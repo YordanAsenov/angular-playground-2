@@ -20,6 +20,8 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
+import { PizzeListComponent } from './menu/pizze-list/pizze-list.component';
+import { PizzaDisplayComponent } from './menu/pizza-display/pizza-display.component';
 
 const ngModules = [
   NzLayoutModule,
@@ -36,7 +38,9 @@ registerLocaleData(it);
     MenuComponent,
     ShoppingCartComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    PizzeListComponent,
+    PizzaDisplayComponent
   ],
   imports: [
     BrowserModule,
