@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Pizza } from 'src/models/pizza.model';
 
 @Component({
   selector: 'app-pizza-display',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./pizza-display.component.less']
 })
 export class PizzaDisplayComponent {
-
+  @Input()
+  pizzaInput!: Pizza;
 }

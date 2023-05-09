@@ -9,6 +9,4 @@ import { Pizza } from 'src/models/pizza.model';
 export class PizzeListComponent {
   @Input()
   pizzeInput!: Pizza[];
-
-  imageUrl: string = "https://www.giallozafferano.it/images/249-24919/Pizza-napoletana_650x433_wm.jpg";
 }

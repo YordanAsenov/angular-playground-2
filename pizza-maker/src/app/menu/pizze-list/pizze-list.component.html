@@ -1,5 +1,4 @@
-<ul>
-  <li *ngFor="let pizza of pizzeInput; index as i">
-    {{ pizza.name }}
-  </li>
-</ul>
+<div *ngFor="let pizza of pizzeInput">
+  <!-- {{ pizza | json }} -->
+  <app-pizza-display [pizzaInput]="pizza"></app-pizza-display>
+</div>

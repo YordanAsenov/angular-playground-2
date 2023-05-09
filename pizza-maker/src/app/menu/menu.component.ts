@@ -15,8 +15,8 @@ export class MenuComponent {
   ];
 
   pizze: Pizza[] = [
-    new Pizza(1, "Bianca", [this.toppings[2]]),
-    new Pizza(2, "Rossa", [this.toppings[1]]),
-    new Pizza(3, "Margherita", [this.toppings[1], this.toppings[2]])
+    new Pizza(1, "Bianca", [this.toppings[1]]),
+    new Pizza(2, "Rossa", [this.toppings[0]]),
+    new Pizza(3, "Margherita", [this.toppings[0], this.toppings[1]])
   ];
 }
