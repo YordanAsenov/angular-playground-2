@@ -12,6 +12,16 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
+
+const ngModules = [
+  NzLayoutModule,
+  NzMenuModule,
+  NzBreadCrumbModule
+];
+
 registerLocaleData(it);
 
 @NgModule({
@@ -24,7 +34,8 @@ registerLocaleData(it);
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ...ngModules
   ],
   providers: [
     { provide: NZ_I18N, useValue: it_IT }
