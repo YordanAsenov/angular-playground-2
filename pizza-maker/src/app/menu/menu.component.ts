@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Pizza } from 'src/models/pizza.model';
 import { MenuService } from './menu.service';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-menu',
@@ -11,13 +12,13 @@ import { MenuService } from './menu.service';
 export class MenuComponent implements OnInit {
 
   private menuService: MenuService;
-  pizze: Pizza[] = [];
+  pizze$: Observable<Pizza[]> = of([]);
 
   constructor(menuService: MenuService) {
     this.menuService = menuService;
   }
 
   ngOnInit(): void {
-    this.pizze = this.menuService.pizzaCatalog();
+    this.pizze$ = this.menuService.pizzaCatalog();
   }
 }

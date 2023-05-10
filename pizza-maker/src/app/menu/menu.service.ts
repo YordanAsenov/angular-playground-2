@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 import { Pizza } from 'src/models/pizza.model';
 import { Topping } from 'src/models/topping.model';
 
@@ -6,8 +7,6 @@ import { Topping } from 'src/models/topping.model';
   providedIn: 'root'
 })
 export class MenuService {
-
-  constructor() { }
 
   toppings: Topping[] = [
     new Topping(1, "tomato"),
@@ -30,7 +29,7 @@ export class MenuService {
     new Pizza(6, "Salame piccante", [this.toppings[0], this.toppings[1], this.toppings[2], this.toppings[7], this.toppings[8]])
   ];
 
-  pizzaCatalog() : Pizza[] {
-    return this.pizze;
+  pizzaCatalog() : Observable<Pizza[]> {
+    return of(this.pizze);
   }
 }

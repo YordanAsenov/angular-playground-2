@@ -1,1 +1,1 @@
-<app-pizze-list [pizzeInput]="pizze"></app-pizze-list>
+<app-pizze-list [pizzeInput]="(pizze$ | async) || []"></app-pizze-list>

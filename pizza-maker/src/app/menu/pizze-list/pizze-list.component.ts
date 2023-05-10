@@ -8,5 +8,5 @@ import { Pizza } from 'src/models/pizza.model';
 })
 export class PizzeListComponent {
   @Input()
-  pizzeInput!: Pizza[];
+  pizzeInput: Pizza[] = [];
 }
