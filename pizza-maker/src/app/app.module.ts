@@ -25,6 +25,7 @@ import { MenuComponent } from './menu/menu.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { PizzeListComponent } from './menu/pizze-list/pizze-list.component';
 import { PizzaDisplayComponent } from './menu/pizza-display/pizza-display.component';
+import { StoreModule } from '@ngrx/store';
 
 const ngModules = [
   NzLayoutModule,
@@ -53,7 +54,8 @@ registerLocaleData(it);
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ...ngModules
+    ...ngModules,
+    StoreModule.forRoot({}, {})
   ],
   providers: [
     { provide: NZ_I18N, useValue: it_IT }
