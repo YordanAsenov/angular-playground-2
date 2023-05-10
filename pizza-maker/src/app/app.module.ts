@@ -10,23 +10,28 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
+import { NzCardModule } from 'ng-zorro-antd/card';
+
+import { HeaderComponent } from './layout/header/header.component';
+import { FooterComponent } from './layout/footer/footer.component';
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { MenuComponent } from './menu/menu.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
-
-import { NzLayoutModule } from 'ng-zorro-antd/layout';
-import { NzMenuModule } from 'ng-zorro-antd/menu';
-import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
-import { HeaderComponent } from './layout/header/header.component';
-import { FooterComponent } from './layout/footer/footer.component';
 import { PizzeListComponent } from './menu/pizze-list/pizze-list.component';
 import { PizzaDisplayComponent } from './menu/pizza-display/pizza-display.component';
 
 const ngModules = [
   NzLayoutModule,
+  NzGridModule,
   NzMenuModule,
-  NzBreadCrumbModule
+  NzBreadCrumbModule,
+  NzCardModule
 ];
 
 registerLocaleData(it);

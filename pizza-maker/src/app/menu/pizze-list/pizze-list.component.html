@@ -1,4 +1,6 @@
-<div *ngFor="let pizza of pizzeInput">
-  <!-- {{ pizza | json }} -->
-  <app-pizza-display [pizzaInput]="pizza"></app-pizza-display>
+<div nz-row [nzGutter]="8">
+  <div nz-col [nzSpan]="8" *ngFor="let pizza of pizzeInput">
+    <!-- {{ pizza | json }} -->
+    <app-pizza-display [pizzaInput]="pizza"></app-pizza-display>
+  </div>
 </div>
