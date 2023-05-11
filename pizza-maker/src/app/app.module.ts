@@ -14,6 +14,7 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzButtonModule } from 'ng-zorro-antd/button';
 
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
@@ -36,7 +37,8 @@ const ngModules = [
   NzGridModule,
   NzMenuModule,
   NzBreadCrumbModule,
-  NzCardModule
+  NzCardModule,
+  NzButtonModule
 ];
 
 registerLocaleData(it);

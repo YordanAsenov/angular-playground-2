@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Pizza } from 'src/models/pizza.model';
 
 @Component({
@@ -9,4 +9,11 @@ import { Pizza } from 'src/models/pizza.model';
 export class PizzeListComponent {
   @Input()
   pizzeInput: Pizza[] = [];
+
+  @Output()
+  createPizzaRequested = new EventEmitter();
+
+  onCreateNewPizza() {
+    this.createPizzaRequested.emit();
+  }
 }

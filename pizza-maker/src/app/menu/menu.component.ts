@@ -26,7 +26,10 @@ export class MenuComponent implements OnInit {
 
   ngOnInit(): void {
     this.pizze$ = this.store.select(pizzeSelector);
-
     this.store.dispatch(loadPizze());
+  }
+
+  onCreatePizzaRequest() {
+    console.log("New pizza!");
   }
 }
