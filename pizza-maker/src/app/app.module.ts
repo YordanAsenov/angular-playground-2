@@ -2,8 +2,7 @@ import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
-import { NZ_I18N } from 'ng-zorro-antd/i18n';
-import { it_IT } from 'ng-zorro-antd/i18n';
+import { NZ_I18N, it_IT } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import it from '@angular/common/locales/it';
 import { FormsModule } from '@angular/forms';
@@ -29,6 +28,8 @@ import { PizzaDisplayComponent } from './menu/pizza-display/pizza-display.compon
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { menuReducer } from './menu/store/menu.reducer';
+import { MenuEffects } from './menu/store/menu.effects';
 
 const ngModules = [
   NzLayoutModule,
@@ -57,8 +58,10 @@ registerLocaleData(it);
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    StoreModule.forRoot({}, {}),
-    EffectsModule.forRoot([]),
+    StoreModule.forRoot({
+      menu: menuReducer
+    }),
+    EffectsModule.forRoot(MenuEffects),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
       logOnly: !isDevMode(), // Restrict extension to log-only mode
