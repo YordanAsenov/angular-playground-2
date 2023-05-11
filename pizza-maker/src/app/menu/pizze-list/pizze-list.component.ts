@@ -12,7 +12,7 @@ export class PizzeListComponent {
   @Output()
   createPizzaRequested = new EventEmitter();
 
-  onCreateNewPizza() {
+  onCreateNewPizzaClick() {
     this.createPizzaRequested.emit();
   }
 }

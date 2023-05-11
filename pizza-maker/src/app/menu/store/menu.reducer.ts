@@ -15,10 +15,8 @@ export const menuReducer = createReducer(
   on(loadPizzeSuccess, (state, payload) => ({ ...state, ...payload }))
 );
 
-// selectFeature will have the type MemoizedSelector<object, FeatureState>
 export const selectMenuState = createFeatureSelector<MenuState>('menu');
 
-// selectFeatureCount will have the type MemoizedSelector<object, number>
 export const pizzeSelector = createSelector(
   selectMenuState,
   state => state.pizze
