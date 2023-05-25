@@ -9,6 +9,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
@@ -22,15 +26,14 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { MenuComponent } from './menu/menu.component';
-import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
-import { PizzeListComponent } from './menu/pizze-list/pizze-list.component';
-import { PizzaDisplayComponent } from './menu/pizza-display/pizza-display.component';
-
-import { StoreModule } from '@ngrx/store';
-import { EffectsModule } from '@ngrx/effects';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { menuReducer } from './menu/store/menu.reducer';
 import { MenuEffects } from './menu/store/menu.effects';
+
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { shoppingCartReducer } from './shopping-cart/store/shopping-cart.reducer';
+
+import { PizzeListComponent } from './menu/pizze-list/pizze-list.component';
+import { PizzaDisplayComponent } from './menu/pizza-display/pizza-display.component';
 
 const ngModules = [
   NzLayoutModule,
@@ -61,7 +64,8 @@ registerLocaleData(it);
     HttpClientModule,
     BrowserAnimationsModule,
     StoreModule.forRoot({
-      menu: menuReducer
+      menu: menuReducer,
+      shoppingCart: shoppingCartReducer
     }),
     EffectsModule.forRoot(MenuEffects),
     StoreDevtoolsModule.instrument({

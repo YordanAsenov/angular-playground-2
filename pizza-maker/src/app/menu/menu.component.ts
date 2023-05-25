@@ -4,6 +4,7 @@ import { Observable, of } from 'rxjs';
 import { Pizza } from 'src/models/pizza.model';
 import { pizzeSelector } from './store/menu.reducer';
 import { loadPizze } from './store/menu.actions';
+import { addItem } from '../shopping-cart/store/shopping-cart.actions';
 
 @Component({
   selector: 'app-menu',
@@ -20,6 +21,6 @@ export class MenuComponent implements OnInit {
   }
 
   onCreatePizzaRequest() {
-    console.log("New pizza!");
+    this.store.dispatch(addItem({ pizza: new Pizza(7, "Focaccia", []) }));
   }
 }
